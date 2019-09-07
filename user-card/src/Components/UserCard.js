@@ -1,4 +1,6 @@
 import React from "react";
+import Moment from "react-moment";
+
 import { Card, Image } from "semantic-ui-react";
 
 const UserCard = props => {
@@ -7,7 +9,9 @@ const UserCard = props => {
       <Image src={props.img} />
       <Card.Content textAlign="left">
         <Card.Header as="h2">{props.name}</Card.Header>
-        <Card.Meta>Joined on {props.joined}</Card.Meta>
+        <Card.Meta>
+          Joined on <Moment format="MMMM DD, YYYY">{props.joined}</Moment>
+        </Card.Meta>
         <Card.Meta>{props.hire}</Card.Meta>
         <Card.Meta>{props.email}</Card.Meta>
         <Card.Meta>{props.location}</Card.Meta>
